@@ -10,7 +10,7 @@ const App = () => {
 
   const handleDataSubmit = async (data) => {
     try {
-      const result = await axios.post('https://your-backend-url.vercel.app/api/bfhl', data);
+      const result = await axios.post('https://bajaj-backend-red.vercel.app/bfhl', data);
       setResponse(result.data);
     } catch (error) {
       console.error('Error calling API:', error);
