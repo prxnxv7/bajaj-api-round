@@ -1,43 +1,19 @@
 import React, { useState } from 'react';
-import axios from 'axios';
-import InputForm from './components/input';
-import Dropdown from './components/multiselect';
+import JsonInput from './components/input';
 import ResponseDisplay from './components/display';
+import './App.css';
 
-const App = () => {
-  const [response, setResponse] = useState(null);
-  const [selectedOptions, setSelectedOptions] = useState([]);
+function App() {
+    const [response, setResponse] = useState(null);
+    const [selectedOptions, setSelectedOptions] = useState([]);
 
-  const handleDataSubmit = async (data) => {
-    try {
-      const result = await axios.post('https://bajaj-backend-red.vercel.app/bfhl', data);
-      setResponse(result.data);
-    } catch (error) {
-      console.error('Error calling API:', error);
-    }
-  };
-
-  const handleDropdownChange = (e) => {
-    const options = Array.from(e.target.selectedOptions, (option) => option.value);
-    setSelectedOptions(options);
-  };
-
-  return (
-    <div className='App'>
-      <h1>React Frontend for API</h1>
-      <InputForm onDataSubmit={handleDataSubmit} />
-      {response && (
-        <>
-          <Dropdown
-            options={['Alphabets', 'Numbers', 'Highest lowercase alphabet']}
-            selectedOptions={selectedOptions}
-            onChange={handleDropdownChange}
-          />
-          <ResponseDisplay response={response} selectedOptions={selectedOptions} />
-        </>
-      )}
-    </div>
-  );
-};
+    return (
+        <div className="app-container">
+            <h1 className="app-title">Pranav Jayaraj - 21BRS1190 - 18/05/2003</h1>
+            <JsonInput setResponse={setResponse} setSelectedOptions={setSelectedOptions} />
+            <ResponseDisplay response={response} selectedOptions={selectedOptions} />
+        </div>
+    );
+}
 
 export default App;
