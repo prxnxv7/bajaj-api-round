@@ -12,7 +12,7 @@ const JsonInput = ({ setResponse, setSelectedOptions }) => {
 
         try {
             const parsedInput = JSON.parse(jsonInput);
-            const result = await axios.post('http://localhost:3000/bfhl', parsedInput);
+            const result = await axios.post('https://bajaj-backend-beryl-seven.vercel.app/bfhl', parsedInput);
             setResponse(result.data);
             setError('');
         } catch (err) {
