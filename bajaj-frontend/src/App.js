@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import InputForm from './components/InputForm';
-import Dropdown from './components/Dropdown';
-import ResponseDisplay from './components/ResponseDisplay';
+import InputForm from './components/input';
+import Dropdown from './components/multiselect';
+import ResponseDisplay from './components/display';
 
 const App = () => {
   const [response, setResponse] = useState(null);
