@@ -4,7 +4,6 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = process.env.PORT || 3000;
 
-// Replace these with your own details
 const USER_ID = "pranav_jayaraj_18052003";
 const EMAIL = "pranav.jyj@gmail.com";
 const ROLL_NUMBER = "21BRS1190";
